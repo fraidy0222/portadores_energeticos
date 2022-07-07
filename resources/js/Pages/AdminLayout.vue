@@ -3,14 +3,13 @@ import {ref} from "vue";
 import Sidebar from '@/components/Sidebar.vue';
 import Navbar from '@/components/NavbarComponent.vue';
 import {MenuAlt1Icon} from '@heroicons/vue/outline';
-import JetNavLink from '@/Jetstream/NavLink.vue';
 
 const sidebarShow = ref(false)
 
 </script>
 
 <template>
-    <div class="flex flex-no-wrap bg-gray-200">
+    <div class="flex flex-no-wrap bg-gray-200 font-sans">
         <Sidebar :sidebarShow="sidebarShow"/>
         <div class="flex-1">
             <Navbar>
