@@ -53,6 +53,9 @@ const logout = () => {
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </JetNavLink>
+                                <JetNavLink :href="route('user.index')" :active="route().current('user.index')">
+                                    Usuarios
+                                </JetNavLink>
                             </div>
                         </div>
 
