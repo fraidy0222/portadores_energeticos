@@ -16,7 +16,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Auth/Login', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -29,7 +29,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/admin', function () {
+        return Inertia::render('AdminLayout');
+    })->name('admin');
+
+//    Route::get('/usuario', function () {
+//        return Inertia::render('Users/Index');
+//    })->name('usuario');
+    Route::resource('/user', \App\Http\Controllers\UserController::class)->parameters(['user' => 'customer']);
 });
