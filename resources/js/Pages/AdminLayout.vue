@@ -2,8 +2,9 @@
 import {ref} from "vue";
 import Sidebar from '@/components/Sidebar.vue';
 import Navbar from '@/components/NavbarComponent.vue';
-import { MenuAlt1Icon } from '@heroicons/vue/outline';
+import {MenuAlt1Icon} from '@heroicons/vue/outline';
 import JetNavLink from '@/Jetstream/NavLink.vue';
+
 const sidebarShow = ref(false)
 
 </script>
@@ -21,11 +22,9 @@ const sidebarShow = ref(false)
                 </button>
             </Navbar>
 
-            <div class="container mx-auto py-10 h-screen w-11/12 overflow-auto">
-                <div class="w-full h-full">
-                    <!-- Place your content here -->
-                    <slot name="content"></slot>
-                </div>
+            <div class="container mx-auto py-10 w-11/12 min-h-screen">
+                <!-- Place your content here -->
+                <slot name="content"></slot>
             </div>
         </div>
     </div>
